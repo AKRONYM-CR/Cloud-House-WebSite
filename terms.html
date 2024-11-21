@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]>
+<!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8" />
+	<title>Cloud House</title>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:image:width" content="470" />
+	<meta property="og:image:height" content="246" />
+	<meta property="og:site_name" content="" />
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="theme-color" content="#212121" />
+	<meta name="msapplication-navbutton-color" content="#212121" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="#212121" />
+
+	<!-- Web Fonts 
+	================================================== -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+		rel="stylesheet" />
+
+	<!-- CSS
+	================================================== -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/ionicons.min.css" />
+	<link rel="stylesheet" href="css/datepicker.css" />
+	<link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" />
+	<link rel="stylesheet" href="css/owl.transitions.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/colors/color.css" />
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="CloudHouseBlackLogo.png" />
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+	<!-- Links -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<style>
+		.scroll-down-animation {
+			position: absolute;
+			left: 50%;
+			right: 50%;
+			bottom: -200px;
+		}
+
+		.mouse {
+			margin: 0 auto;
+			display: block;
+			border-radius: 50px;
+			border: 2px solid #fff;
+			height: 60px;
+			width: 30px;
+			position: relative;
+		}
+
+		.move {
+			position: absolute;
+			background-color: #fff;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+			animation: move 2s linear infinite;
+		}
+
+		@keyframes move {
+			0% {
+				transform: translate(-50%, 5px);
+				opacity: 0;
+			}
+
+			50% {
+				transform: translate(-50%, 30px);
+				opacity: 1;
+			}
+
+			100% {
+				transform: translate(-50%, 60px);
+				opacity: 0;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="loader">
+		<div class="w-100 h-100 flex-wrap d-flex flex-column justify-content-center align-content-center ">
+
+			<img width="150" height="200" style="filter: invert(); object-fit: cover;" src="CloudHouseBlackLogo.png"
+				alt="">
+			<div class="d-flex justify-content-center mt-4">
+				<div class="loader__figure_dot"></div>
+				<div class="loader__figure_dot"></div>
+				<div class="loader__figure_dot"></div>
+			</div>
+		</div>
+	</div>
+
+	<a href="https://wa.me/50688923030" class="btn btn-dark rounded-circle py-3"
+		style="position: fixed; bottom: 65px; right: 10px; z-index: 100;">
+		<i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+	</a>
+
+
+	<svg class="hidden">
+		<svg id="icon-nav" viewBox="0 0 152 63">
+			<title>navarrow</title>
+			<path
+				d="M115.737 29L92.77 6.283c-.932-.92-1.21-2.84-.617-4.281.594-1.443 1.837-1.862 2.765-.953l28.429 28.116c.574.57.925 1.557.925 2.619 0 1.06-.351 2.046-.925 2.616l-28.43 28.114c-.336.327-.707.486-1.074.486-.659 0-1.307-.509-1.69-1.437-.593-1.442-.315-3.362.617-4.284L115.299 35H3.442C2.032 35 .89 33.656.89 32c0-1.658 1.143-3 2.552-3H115.737z" />
+		</svg>
+	</svg>
+
+	<!-- Nav and Logo
+	================================================== -->
+
+	<nav id="menu-wrap" class="menu-back cbp-af-header">
+		<div class="menu-top background-black">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="px-0 px-md-3 pl-1 py-3">
+						<span class="call-top">call us:</span>
+						<a href="tel:+50688923030" class="call-top">+506 8892-3030</a>
+					</div>
+					<div class="px-0 px-md-3 py-3 text-right">
+						<div class="lang-wrap">
+							Lang
+							<ul>
+								<li><a href="#">es</a></li>
+								<li><a href="#">eng</a></li>
+							</ul>
+						</div>
+						<a href="https://ul.waze.com/ul?preview_venue_id=180879460.1809122276.27855530&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+							target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-waze"
+								style="color: #ffffff;"></i></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu">
+			<a href="index.html">
+				<div class="logo">
+					<img src="CloudHouseBlackLogo.png" style="filter: invert(); width: 60px" alt="" />
+				</div>
+			</a>
+			<ul>
+				<li>
+					<a class="curent-page" href="index.html">home</a>
+				</li>
+
+				<li>
+					<a href="about.html">about us</a>
+				</li>
+				<li>
+					<a href="#">Cottages</a>
+					<ul>
+						<li>
+							<a href="cabaña.html">Cabaña</a>
+						</li>
+						<li>
+							<a href="casita.html">Casita</a>
+						</li>
+						<li>
+							<a href="loft.html">Loft</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="services.html">Services</a>
+				</li>
+				<li>
+					<a href="experiences.html">Experiences</a>
+				</li>
+				<li>
+					<a href="wildlife.html">Wildlife</a>
+				</li>
+				<li>
+					<a href="reservation.html"><span class="font-weight-bold text-white border-md">Book Now</span></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<div class="section big-55-height over-hide z-bigger">
+
+		<div class="parallax parallax-top" style="background-image: url('imagenes/casita-horizontal.jpg')"></div>
+		<div class="dark-over-pages"></div>
+
+		<div class="hero-center-section pages">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 parallax-fade-top">
+						<div class="hero-text">Terms &amp; Conditions</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section padding-top-bottom z-bigger">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8 text-center">
+					<h2 class="subtitle with-line mb-4 font-weight-bold text-black-50">Cloud House</h2>
+					<h3 class="border-bottom pb-2 mb-4">Terms and Conditions</h3>
+				</div>
+				<div class="col-lg-10 font-weight-bold">
+					<p class="mb-4">Welcome to Cloud-House, where we offer unique accommodation experiences in a natural
+						setting. By accessing and using our website and services, you agree to comply with these Terms
+						and Conditions. Your experience is important to us, and we strive to provide you with a
+						comfortable and enjoyable stay.</p>
+
+					<h5 class="text-primary">1. Use of the Site</h5>
+					<p class="mb-4">Our services are intended for individuals over 18 years of age. By using our site,
+						you confirm that you have the legal capacity to do so. You agree to use the website only for
+						lawful purposes and in a manner that does not infringe the rights of, restrict or inhibit anyone
+						else's use of the site. This includes but is not limited to conduct that is unlawful, harmful,
+						threatening, abusive, harassing, defamatory, vulgar, obscene, or otherwise objectionable.</p>
+
+					<h5 class="text-primary">2. Book Nows</h5>
+					<p class="mb-4">All reservations are confirmed upon receipt of full payment. You will receive a
+						confirmation email with the details of your booking. We reserve the right to cancel any
+						reservation that does not comply with our policies or if payment is not successfully processed.
+						It is your responsibility to ensure that the information provided during the reservation process
+						is accurate and complete.</p>
+
+					<h5 class="text-primary">3. Cancellation Policies</h5>
+					<p class="mb-4">Cancellations must be made at least 48 hours in advance to receive a full refund.
+						Cancellations made with less than 48 hours' notice may be subject to charges, including the full
+						reservation amount. We understand that plans can change, and we will do our best to accommodate
+						your needs within the framework of our cancellation policy. Please refer to your booking
+						confirmation for specific details.</p>
+
+					<h5 class="text-primary">4. Guest Responsibilities</h5>
+					<p class="mb-4">Guests are responsible for maintaining the property in good condition and for any
+						damage caused during their stay. We encourage you to treat our property with respect, just as
+						you would your own home. Charges will apply for damages, missing items, or excessive cleaning
+						required after your stay. If you notice any damages or issues upon arrival, please notify us
+						immediately to avoid being held responsible.</p>
+
+					<h5 class="text-primary">5. The Deck</h5>
+					<p class="mb-4">Our deck is a versatile outdoor space perfect for hosting events such as weddings,
+						gatherings, or celebrations. We are happy to provide this area to enhance your experience.
+						However, please note that guests are required to follow our event guidelines to ensure the
+						comfort and safety of all visitors.</p>
+					<p class="mb-4">Additionally, we do not allow the presence of aggressive dogs or cats on the
+						premises
+						to maintain a safe and peaceful environment for everyone.</p>
+
+					<h5 class="text-primary">6. Modifications</h5>
+					<p class="mb-4">We reserve the right to modify these Terms and Conditions at any time. Any changes
+						will be effective immediately upon posting on our website. We will notify you of significant
+						changes via email or through a notification on our site. Your continued use of the site and our
+						services after such changes signifies your acceptance of the new Terms and Conditions.</p>
+
+					<h5 class="text-primary">7. Liability Limitations</h5>
+					<p class="mb-4">Cloud-House shall not be liable for any indirect, incidental, or consequential
+						damages arising from your use of our services. We strive to provide a safe and enjoyable
+						environment, but we cannot guarantee your safety during your stay. It is your responsibility to
+						ensure your own safety and well-being while on the premises.</p>
+
+					<h5 class="text-primary">8. Governing Law</h5>
+					<p class="mb-4">These Terms and Conditions shall be governed by and construed in accordance with the
+						laws of the jurisdiction in which Cloud-House operates. Any disputes arising from or related to
+						these terms shall be resolved in the appropriate courts of that jurisdiction.</p>
+
+					<hr class="my-4 border-secondary">
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</div>
+	<div class="section padding-bottom over-hide mt-5">
+		<div class="container mt-5">
+			<div class="row justify-content-center">
+				<div class="col-lg-4" data-scroll-reveal="enter bottom move 50px over 0.7s after 0.2s">
+					<div class="room-box background-grey">
+						<div class="room-name">La Cabaña</div>
+						<img class="border-md" src="imagenes/laCabaña/3.jpg" alt="" />
+						<div class="room-box-in">
+							<h5 class="">La Cabaña</h5>
+							<p class="mt-3">
+								Experience spacious comfort in a rustic yet modern setting, perfect for family
+								gatherings. Enjoy cozy evenings by the fireplace and entertain on the terrace surrounded
+								by nature’s beauty.
+							</p>
+							<div class="room-icons mt-4 pt-4">
+								<a class="mt-1 btn btn-primary text-white border-md" href="cabaña.html">See More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mt-4 mt-lg-0" data-scroll-reveal="enter bottom move 50px over 0.7s after 0.6s">
+					<div class="room-box background-grey">
+						<div class="room-name">Loft</div>
+						<img class="border-md" src="imagenes/loft/loft-ventanal.jpg" alt="" />
+						<div class="room-box-in">
+							<h5 class="">Loft</h5>
+							<p class="mt-3">
+								A romantic getaway designed for couples, featuring a luxurious king bed and serene
+								forest views. Enjoy intimate moments by the fire pit and the convenience of modern
+								amenities.
+							</p>
+							<div class="room-icons mt-4 pt-4">
+								<a class="mt-1 btn btn-primary text-white border-md" href="loft.html">See More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 mt-4 mt-lg-0" data-scroll-reveal="enter bottom move 50px over 0.7s after 0.6s">
+					<div class="room-box background-grey">
+						<div class="room-name">La Casita</div>
+						<img class="border-md" src="imagenes/LaCasita/5.jpg" alt="" />
+						<div class="room-box-in">
+							<h5 class="">La Casita</h5>
+							<p class="mt-3">
+								This charming retreat offers tranquility with cozy bedrooms and stunning forest views.
+								Enjoy evenings by the fire pit on the deck, making it an ideal escape for nature lovers.
+							</p>
+							<div class="room-icons mt-4 pt-4">
+								<a class="mt-1 btn btn-primary text-white border-md" href="casita.html">See More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section background-dark over-hide">
+		<div class="container-fluid py-4">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3">
+					<a href="services.html">
+						<div class="img-wrap services-wrap">
+							<img style="max-height: 200px; object-fit: cover;" class="border-md"
+								src="imagenes/services/cava/CAVA1.webp" alt="" />
+							<div class="services-text-over border-md">La Cava</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-lg-3 pt-4 pt-sm-0">
+					<a href="services.html">
+						<div class="img-wrap services-wrap">
+							<img src="imagenes/services/desk/Deck.jpg"
+								style="max-height: 200px; object-fit: cover;" class="border-md" alt="" />
+							<div class="services-text-over border-md">El Deck</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-lg-3 pt-4 pt-lg-0">
+					<a href="services.html">
+						<div class="img-wrap services-wrap">
+							<img src="imagenes/camino.jpg" style="max-height: 200px; object-fit: cover;"
+								class="border-md" alt="" />
+							<div class="services-text-over border-md">Trails</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6 col-lg-3 pt-4 pt-lg-0">
+					<a href="services.html">
+						<div class="img-wrap services-wrap">
+							<img src="imagenes/d1ae79fb-e2f1-4eae-882a-91497a239131.jpeg"
+								style="max-height: 200px; object-fit: cover;" class="border-md" alt="" />
+							<div class="services-text-over border-md">Reservation</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section padding-top-bottom-small background-black over-hide footer">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-sm-4 text-center text-md-left">
+					<img src="CloudHouseBlackLogo.png" style="filter: invert(); width:60px;" alt="" />
+					<p class="color-grey mt-4"> <a target="_blank"
+							href="https://ul.waze.com/ul?preview_venue_id=180879460.1809122276.27855530&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+							class="call-top"><i class="fa-brands fa-waze" style="color: #ffffff;"></i></i> <br>
+							Rancho Redondo <br> San Jose </a></p>
+					<a class="mb-2" href="mailto:">mail@gmail.com</a>
+					<a href="tel:+50688923030">+506 8892-3030</a>
+				</div>
+				<div class="col-sm-4 text-center text-md-left my-4 my-sm-0">
+					<h6 class="color-white mb-3">information</h6>
+					<a href="reservation.html">Book Now</a>
+					<a href="services.html">Services</a>
+					<a href="terms.html">terms &amp; conditions</a>
+					<a href="privacy.html">Privacy Policy</a>
+				</div>
+				<div class="col-sm-4 text-center text-md-left logos-footer">
+					<h6 class="color-white mb-3">Cottages</h6>
+					<a href="cabaña.html">Cabaña</a>
+					<a href="casita.html">Casita</a>
+					<a href="loft.html">Loft</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section py-4 background-dark over-hide footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+					<p>2024 © Cloud House. All rights reserved.</p>
+				</div>
+				<div class="col-md-6 text-center text-md-right">
+					<a href="https://www.facebook.com" target="_blank" class="social-footer-bottom">facebook</a>
+					<a href="https://www.instagram.com" target="_blank" class="social-footer-bottom">instagram</a>
+					<a href="https://ul.waze.com/ul?preview_venue_id=180879460.1809122276.27855530&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+						target="_blank" class="social-footer-bottom">Waze</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="scroll-to-top"></div>
+
+
+	<!-- JAVASCRIPT
+    ================================================== -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/custom.js"></script>
+	<!-- End Document
+================================================== -->
+</body>
+
+</html>
