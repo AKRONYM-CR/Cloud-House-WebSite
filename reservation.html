@@ -32,6 +32,9 @@
   <link
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
     rel="stylesheet" />
+  <link 
+    href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" crossorigin="anonymous"
+    rel="stylesheet" >
 
   <!-- CSS
 	================================================== -->
@@ -109,7 +112,6 @@
 <body>
   <div class="loader">
     <div class="w-100 h-100 flex-wrap d-flex flex-column justify-content-center align-content-center ">
-
       <img width="150" height="200" style="filter: invert(); object-fit: cover;" src="CloudHouseBlackLogo.png" alt="">
       <div class="d-flex justify-content-center mt-4">
         <div class="loader__figure_dot"></div>
@@ -206,10 +208,8 @@
 	================================================== -->
 
   <div class="section big-55-height over-hide z-bigger">
-
     <div class="parallax parallax-top" style="background-image: url('imagenes/casita-horizontal.jpg')"></div>
     <div class="dark-over-pages"></div>
-
     <div class="hero-center-section pages">
       <div class="container">
         <div class="row justify-content-center">
@@ -228,56 +228,119 @@
           <div class="subtitle with-line text-center mb-4 text-xl font-bold">Cloud House</div>
           <h3 class="text-center pb-4 text-2xl">Drop Us a Line</h3>
         </div>
-        <div class="section clearfix"></div>
-
-        <div class="col-md-4 ajax-form mb-4">
-          <input name="name" type="text" placeholder="Your Name: *" autocomplete="off"
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+        <div class="container mt-5">
+          <div class="card p-4 shadow">
+            <form>
+              <div class="row g-3 align-items-center">
+                <!-- DÓNDE -->
+                <div class="col-md-3">
+                  <label for="ubicacion" class="form-label">Type</label>
+                  <button id="dropdownButton" class="form-control d-flex justify-content-between align-items-center text-start" type="button" data-toggle="dropdown" aria-expanded="false">
+                    <span>Cottages</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 10 L12 3 L21 10"></path>
+                      <rect x="6" y="10" width="12" height="10"></rect>
+                      <line x1="9" y1="20" x2="9" y2="14"></line>
+                      <line x1="15" y1="20" x2="15" y2="14"></line>
+                    </svg>
+                  </button>
+                  <div class="dropdown-menu">
+                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 1)">La Cabaña</button>
+                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 2)">Deck</button>
+                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 3)">La Casita</button>
+                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 4)">Loft</button>
+                  </div>
+                </div>
+                <!-- LLEGADA -->
+                <div class="col-md-3">
+                  <label for="fecha-llegada" class="form-label">Check in</label>
+                  <input type="text" id="fecha-llegada" class="form-control" value="mm/dd/yyyy" disabled>
+                </div>
+                <!-- SALIDA -->
+                <div class="col-md-3">
+                  <label for="fecha-salida" class="form-label">Check out</label>
+                  <input type="text" id="fecha-salida" class="form-control" value="mm/dd/yyyy" disabled>
+                </div>
+                <!-- QUIÉN -->
+                <div class="col-md-3">
+                  <label class="form-label">Who</label>
+                  <button id="dropdownMenuButton" class="form-control d-flex justify-content-between align-items-center text-start" type="button" data-toggle="dropdown" aria-expanded="false">
+                    <span>Guests</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu p-3" id="dropdown-menu" style="width: 250px;" data-bs-auto-close="outside">
+                    <li class="d-flex justify-content-between align-items-center">
+                      <span>Adults</span>
+                      <div class="d-flex align-items-center" id="dropdownAdults">
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle rounded-circle" type="button" onclick="cambiarValor('adultos', -1)">-</button>
+                        <span id="adultos" class="mx-2">1</span>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle rounded-circle" type="button" onclick="cambiarValor('adultos', 1)">+</button>
+                      </div>
+                      <div class="justify-content-end d-none" id="inputAdults">
+                        <input type="text" class="form-control w-50 border-danger" id="adultosInput" onblur="test(value)" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;">
+                      </div>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center mt-2">
+                      <span>Children</span>
+                      <div class="d-flex align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('ninos', -1)">-</button>
+                        <span id="ninos" class="mx-2">0</span>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('ninos', 1)">+</button>
+                      </div>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center mt-2">
+                      <span>Infants</span>
+                      <div class="d-flex align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('bebes', -1)">-</button>
+                        <span id="bebes" class="mx-2">0</span>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('bebes', 1)">+</button>
+                      </div>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center mt-2">
+                      <span>Pets</span>
+                      <div class="d-flex align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('mascotas', -1)">-</button>
+                        <span id="mascotas" class="mx-2">0</span>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('mascotas', 1)">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+            <div class="row mt-4 d-none" id="reservationForm">
+              <div class="col-md-4">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input type="text" class="form-control" id="fullname">
+              </div>
+              <div class="col-md-4">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="example@example.com">
+              </div>
+              <div class="col-md-4">
+                <label for="phoneNumber" class="form-label">Phone number</label>
+                <input type="number" class="form-control" id="phoneNumber" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" placeholder="87654321">
+              </div>
+              <div class="mt-4 col-md-12 d-flex justify-content-center">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="termsCheck">
+                  <label class="form-check-label" for="termsCheck">
+                    I accept the <a href="#">terms and conditions</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4 mt-4 mt-md-0 ajax-form mb-4">
-          <input name="email" type="text" placeholder="E-Mail: *" autocomplete="off"
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-        </div>
-        <div class="col-md-4 mt-4 mt-md-0 ajax-form mb-4">
-          <input name="date-time" type="datetime-local" autocomplete="off"
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-        </div>
-        <div class="col-md-5 mt-4 mt-md-0 ajax-form mb-4">
-          <input name="occasion" type="text" placeholder="Occasion of Visit *" autocomplete="off"
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-        </div>
-        <div class="col-md-5 mt-4 mt-md-0 ajax-form mb-4">
-          <input name="number_of_people" type="number" placeholder="Number of Persons *" autocomplete="off"
-            id="numPersons" min="1"
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-        </div>
-        <div id="personsNames" style="display: flex!important;" class="col-md-12 mt-4 flex-wrap justify-content-center"></div>
-
-        <div class="section clearfix"></div>
-
-        <!-- Comentarios adicionales sobre accesibilidad u otras consultas -->
-        <div class="col-md-8 mt-4 ajax-form">
-          <textarea name="additional_comments"
-            placeholder="Any questions or comments (e.g., accessibility needs, special requests)?"
-            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            rows="4"></textarea>
-        </div>
-
-        <div class="section clearfix"></div>
-        <div class="col-md-8 mt-3 ajax-checkbox">
-          <ul class="list">
-            <li class="list__item">
-              <label class="label--checkbox text-gray-700">
-                <input type="checkbox" class="checkbox" />
-                Collect my details through this form
-              </label>
-            </li>
-          </ul>
-        </div>
-        <div class="section clearfix"></div>
         <div class="col-md-8 mt-3 ajax-form text-center">
           <button
-            class="send_message bg-indigo-600 text-white p-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            class="send_message bg-indigo-600 text-white p-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
+            onclick="reservation(event)" id="submitButton"
+            disabled
+          >
             <span>Submit</span>
           </button>
         </div>
@@ -292,28 +355,6 @@
       </div>
     </div>
   </div>
-
-
-  <script>
-    document.getElementById('numPersons').addEventListener('input', function () {
-      let numPersons = this.value;
-      let personsNamesContainer = document.getElementById('personsNames');
-
-      personsNamesContainer.innerHTML = '';
-
-      for (let i = 1; i <= numPersons; i++) {
-        let nameInput = document.createElement('input');
-        nameInput.setAttribute('name', 'person_' + i);
-        nameInput.setAttribute('type', 'text');
-        nameInput.setAttribute('placeholder', 'Name of Person ' + i);
-        nameInput.classList.add('w-full', 'p-3', 'mt-4', 'border', 'border-gray-300', 'rounded-md', 'focus:outline-none', 'focus:ring-2', 'focus:ring-indigo-500');
-        personsNamesContainer.appendChild(nameInput);
-      }
-    });
-  </script>
-
-
-
   <div class="section padding-top-bottom-small background-black over-hide footer">
     <div class="container">
       <div class="row justify-content-center">
@@ -369,8 +410,291 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/custom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- End Document
 ================================================== -->
+
+<script>
+  let placeType = 0;
+  let finalStartDate = "";
+  let finalEndDate = "";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const formatDate = (daysToAdd = 0) => {
+      let date = new Date();
+      date.setDate(date.getDate() + daysToAdd);
+      return date.toISOString().split("T")[0];
+    };
+
+    document.getElementById("fecha-llegada").min = formatDate();
+    document.getElementById("fecha-salida").min = formatDate(1);
+
+    document.querySelectorAll("#dropdown-menu").forEach(button => {
+      button.addEventListener("click", function (event) {
+        event.stopPropagation(); // Evita que el dropdown se cierre
+      });
+    });
+  });
+
+  function test(value){
+    if (value !== '') {
+      document.getElementById("adultosInput").classList.remove('border-danger');
+      document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'false');
+      document.getElementById("dropdown-menu").classList.remove("show");
+    } else {
+      document.getElementById("adultosInput").classList.add('border-danger');  // Añade el borde rojo si está vacío
+      document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'true');
+      document.getElementById("dropdown-menu").classList.add("show");
+    }
+  }
+
+  function updateDropdown(element, id) {
+    document.getElementById("dropdownButton").innerText = element.innerText;
+    document.getElementById("dropdownAdults").classList.add("d-flex");
+    document.getElementById("dropdownAdults").classList.remove("d-none");
+    document.getElementById("inputAdults").classList.remove("d-flex");
+    document.getElementById("inputAdults").classList.add("d-none");
+
+    document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'false');
+    document.getElementById("dropdown-menu").classList.remove("show");
+    if(id == 2){
+      console.log(id)
+      document.getElementById("dropdownAdults").classList.remove("d-flex");
+      document.getElementById("dropdownAdults").classList.add("d-none");
+      document.getElementById("inputAdults").classList.add("d-flex");
+      document.getElementById("inputAdults").classList.remove("d-none");
+
+      document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'true');
+      document.getElementById("dropdown-menu").classList.add("show");
+    }
+    
+    searchAvailability(id);
+  }
+
+  function searchAvailability(id) {
+    placeType = id;
+    fetch("https://hook.us2.make.com/z88bjr9rw4o2aupfsnx9t4q1nswrwar5", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tipo_estadia: id })
+    })
+    .then(response => response.json()) // Convertir la respuesta a JSON
+    .then(data => {
+      let fechaStart = document.getElementById("fecha-llegada");
+      let fechaEnd = document.getElementById("fecha-salida");
+      
+      fechaStart.value="mm/dd/yyyy";
+      fechaEnd.value="mm/dd/yyyy";
+
+      fechaStart.disabled = false;
+      fechaEnd.disabled = false;
+
+      let fechasOcupadas = [];
+
+      data.forEach(element => {
+        let startDate = new Date(element.start); // Fecha de llegada
+        let endDate = new Date(element.end); // Fecha de salida
+
+        while (startDate < endDate) {
+          fechasOcupadas.push(startDate.toISOString().split('T')[0]);
+          startDate.setDate(startDate.getDate() + 1);
+        }
+      });
+
+      flatpickr("#fecha-llegada", {
+        disable: fechasOcupadas,
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        maxDate: new Date().fp_incr(90),
+        onChange: function (selectedDates, dateStr, instance) {
+          finalStartDate = dateStr;
+          startDateSelect(dateStr); // Llama a tu función personalizada
+        }
+      });
+
+      flatpickr("#fecha-salida", {
+        disable: fechasOcupadas,
+        dateFormat: "Y-m-d",
+        minDate: new Date().fp_incr(1),
+        maxDate: new Date().fp_incr(91)
+      });
+    })
+    .catch(error => console.error("Error:", error)); // Manejar errores
+  }
+
+  function startDateSelect(startDate){
+    let picker = document.querySelector("#fecha-salida")._flatpickr;
+    if (picker) picker.destroy();
+    let fechaLlegada = new Date(startDate);
+
+    flatpickr("#fecha-salida", {
+      disable: [startDate], // Opcional: deshabilita la fecha de llegada
+      dateFormat: "Y-m-d",
+      minDate: fechaLlegada.fp_incr(1), // Establece el día siguiente como mínimo
+      maxDate: new Date().fp_incr(91), // Máximo 91 días desde hoy
+      onChange: function (selectedDates, dateStr, instance) {
+        finalEndDate = dateStr;
+        endDateSelect(); // Llama a tu función personalizada
+      }
+    });
+  }
+
+  function endDateSelect(){
+    document.getElementById("reservationForm").classList.remove('d-none');
+    document.getElementById("submitButton").disabled = false;
+  }
+
+  function reservation(e){
+    let adultos = document.getElementById("dropdownAdults").classList.contains('d-none') ? parseInt(document.getElementById("adultosInput").value) : parseInt(document.getElementById("adultos").textContent);
+    let ninos = parseInt(document.getElementById("ninos").textContent);
+    let bebes = parseInt(document.getElementById("bebes").textContent);
+    let mascotas = parseInt(document.getElementById("mascotas").textContent);
+
+    let data = `Adults: ${adultos}, Children: ${ninos}, Infants: ${bebes}, Pets: ${mascotas}`;
+
+    let inputs = [
+      document.getElementById("fullname"),
+      document.getElementById("email"),
+      document.getElementById("phoneNumber")
+    ];
+
+    let isValid = true;
+
+    inputs.forEach(input => {
+      if (input.value.trim() === "") {
+        input.classList.add("is-invalid"); // Agrega el borde rojo de Bootstrap
+        isValid = false;
+      } else {
+        input.classList.remove("is-invalid"); // Elimina el borde rojo si se corrige
+      }
+    });
+
+    let termsCheck = document.getElementById("termsCheck");
+    if (!termsCheck.checked) {
+      termsCheck.classList.add("is-invalid");
+      isValid = false;
+    } else {
+      termsCheck.classList.remove("is-invalid");
+    }
+
+    if (!isValid) {
+      return e.preventDefault(); // Evita el envío si hay campos vacíos
+    }
+
+    Swal.fire({
+      title: "<strong>You will make the reservation.</strong>",
+      icon: "info",
+      html: `
+        <strong>Your information:</strong><br>
+        Fullname: ${document.getElementById("fullname").value},<br>
+        Email: ${document.getElementById("email").value},<br>
+        Phone number: ${document.getElementById("phoneNumber").value},<br>
+        For: ${data},<br>
+        At: ${(placeType == 1 ? "La Cabaña" : placeType == 2 ? "Deck" : placeType == 3 ? "La casita" : "Loft")}
+      `,
+      showCancelButton: true,
+      confirmButtonColor: "btn btn-success",
+      cancelButtonColor: "btn btn-danger",
+      confirmButtonText: "Yes!",
+      reverseButtons: true
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        document.getElementById("submitButton").disabled = true;
+
+        fetch("https://hook.us2.make.com/tcplmfpjo95j44b4ianlpt8wx413016b", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          tipo_estadia: placeType, 
+          type: (placeType == 1 ? "La Cabaña" : placeType == 2 ? "Deck" : placeType == 3 ? "La casita" : "Loft"),
+          startDate: finalStartDate, 
+          endDate: finalEndDate,
+          who: data,
+          fullname: document.getElementById("fullname").value,
+          email: document.getElementById("email").value,
+          phoneNumber: document.getElementById("phoneNumber").value
+        })
+      })
+      .then(response => response.json()) // Convertir la respuesta a JSON
+      .then(data => {
+        Swal.fire({
+          title: data.message,
+          icon: data.type
+        }, 
+          timerInterval = setInterval(() => {
+            window.location.reload();
+          }, 300)
+        );
+      })
+      .catch(error => console.error("Error:", error)); // Manejar errores
+      }
+    });
+  }
+
+  function cambiarValor(tipo, cambio) {
+    let elemento = document.getElementById(tipo);
+    let valor = parseInt(elemento.textContent) + cambio;
+    if (valor < 0) return;
+    elemento.textContent = valor;
+    actualizarResumen();
+  }
+  
+  function actualizarResumen() {
+    let adultos = parseInt(document.getElementById("adultos").textContent);
+    let ninos = parseInt(document.getElementById("ninos").textContent);
+    let bebes = parseInt(document.getElementById("bebes").textContent);
+    let mascotas = parseInt(document.getElementById("mascotas").textContent);
+    
+    let texto = `${adultos} adulto${adultos > 1 ? "s" : ""}`;
+    if (ninos > 0) texto += `, ${ninos} niño${ninos > 1 ? "s" : ""}`;
+    if (bebes > 0) texto += `, ${bebes} bebé${bebes > 1 ? "s" : ""}`;
+    if (mascotas > 0) texto += `, ${mascotas} mascota${mascotas > 1 ? "s" : ""}`;
+    
+  }
+</script>
+
+<style>
+  /* Estilo para hacer que el input de flatpickr se vea como un input date nativo */
+  #fecha-llegada, #fecha-salida {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px;
+    width: 100%;
+    background-color: #fff;
+    appearance: none; /* Eliminar estilos específicos de los navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  /* Estilos adicionales para que el calendario de flatpickr se vea consistente */
+  .flatpickr-input {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px;
+    width: 100%;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  /* Para desactivar el botón de calendario de flatpickr */
+  .flatpickr-clear {
+    display: none;
+  }
+
+  .flatpickr-calendar {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  /* Opcional: Si quieres eliminar los bordes en el calendario */
+  .flatpickr-calendar .flatpickr-day:hover {
+    background-color: #e0e0e0;
+  }
+</style>
 </body>
 
 </html>
