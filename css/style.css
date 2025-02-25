@@ -442,7 +442,7 @@ mark{
 	transition : all 0.3s ease-out;
 }
 .cbp-af-header.cbp-af-header-shrink .logo{
-	height: 50px;
+	height: 100%;
 	top: 15px;
 	-webkit-transition : all 0.3s ease-out;
 	-moz-transition : all 0.3s ease-out;
@@ -630,8 +630,7 @@ span.call-top:hover{
 
 
 .logo{
-	position:absolute;
-	height: 64px;
+	height: 100%;
 	z-index:10000;
 	top: 18px;
 	-webkit-transition : all 0.3s ease-out;
@@ -682,17 +681,33 @@ span.call-top:hover{
 	position:relative;
 	width:calc(100% - 60px);
 	margin:0 auto;
-	max-width:1110px;
+	max-width:1410px;
 	z-index:3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@media (max-width: 1170px) {
+	.menu {
+		justify-content: space-between;
+	}
 }
 .menu > ul {
     margin: 0 auto;
-    width: auto;
+    width: 100%;
 	float:right;
     list-style: none;
     padding: 0;
     /* IF .menu position=relative -> ul = container width, ELSE ul = 100% width */
     box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+    position: absolute;
+	background: #111;
+	padding: 20px;
+	top: 115px;
+
 }
 .menu > ul:before,
 .menu > ul:after {
@@ -717,7 +732,7 @@ span.call-top:hover{
     display: block;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	font-size: 13px;
+	font-size: 24px;
 	text-transform: uppercase;
 	vertical-align: bottom;
 	line-height:20px;
@@ -891,7 +906,7 @@ Mobile style's
 		transition : all 0.3s ease-out;
 	}
 	.logo{
-		height: 50px;
+		height: 80px;
 		top: 15px;
 		-webkit-transition : all 0.3s ease-out;
 		-moz-transition : all 0.3s ease-out;
@@ -972,7 +987,6 @@ Mobile style's
     .menu > ul {
 		width: 100%;
 		float:none;
-		position:relative;
         display: none;
     }
     .cbp-af-header.cbp-af-header-shrink .menu > ul > li {
@@ -4034,3 +4048,8 @@ figure.vimeo a img, figure.youtube a img {
 .btn-dark:hover{
 	background-color:  #b5987c!important ;
 }
+
+.font-size-24{
+	font-size: 24px!important;
+}
+

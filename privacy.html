@@ -160,7 +160,7 @@
     <div class="menu">
       <a href="index.html">
         <div class="logo">
-          <img src="CloudHouseBlackLogo.png" style="filter: invert(); width: 60px" alt="" />
+          <img src="CloudHouseBlackLogo.png" style="filter: invert(); object-fit: contain; width: 120px;" alt="" />
         </div>
       </a>
       <ul>
@@ -169,7 +169,7 @@
         </li>
 
         <li>
-          <a href="about.html">about us</a>
+          <a href="about.html" class="text-nowrap">about us</a>
         </li>
         <li>
           <a href="#">Cottages</a>
@@ -192,10 +192,10 @@
           <a href="experiences.html">Experiences</a>
         </li>
         <li>
-          <a href="wildlife.html">Wildlife</a>
+          <a href="farmLife.html">farmLife</a>
         </li>
         <li>
-          <a href="reservation.html"><span class="font-weight-bold text-white border-md">Book Now</span></a>
+          <a href="reservation.html"><span class="font-weight-bold text-white border-md text-nowrap book-now-text font-size-24">Book Now</span></a>
         </li>
       </ul>
     </div>
@@ -223,71 +223,84 @@
 	<div class="section padding-top-bottom z-bigger">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-8 text-center">
-					<h2 class="subtitle with-line mb-4">Cloud House</h2>
-					<h3 class="border-bottom pb-2 mb-4">Privacy Policy</h3>
+				<div class="col-md-8 text-center mb-5">
+					<h2 class="subtitle with-line mb-4 font-weight-bold" style="color: #8B4513;">Cloud House</h2>
+					<h3 class="border-bottom pb-3" style="border-color: #8B4513 !important;">Privacy Policy</h3>
 				</div>
-				<div class="col-lg-10 font-weight-bold">
-					<p class="mb-4">Welcome to Cloud-House, where we prioritize your privacy while providing unique
-						accommodation experiences in a natural setting. This Privacy Policy outlines how we collect,
-						use, and protect your personal information when you access our website and services. Your trust
-						is important to us, and we are committed to safeguarding your information.</p>
+				<div class="col-lg-10">
+					<div class="privacy-container p-4" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.1); border: 1px solid rgba(139, 69, 19, 0.2);">
+						<p class="mb-4 lead">Welcome to Cloud-House, where we prioritize your privacy while providing unique
+							accommodation experiences in a natural setting. This Privacy Policy outlines how we collect,
+							use, and protect your personal information.</p>
 
-					<h5 class="text-primary">1. Information We Collect</h5>
-					<p class="mb-4">We may collect personal information from you when you make a reservation, create an
-						account, or interact with our website. This information may include your name, email address,
-						phone number, payment information, and any other details you provide. Additionally, we may
-						collect non-personal information such as your IP address, browser type, and browsing behavior on
-						our site to improve your experience.</p>
+						<div class="privacy-section mb-5">
+							<h5 class="privacy-title mb-3" style="color: #8B4513; font-weight: 600;">1. Information We Collect</h5>
+							<p class="mb-4">We may collect personal information from you when you make a reservation...</p>
+						</div>
 
-					<h5 class="text-primary">2. Use of Your Information</h5>
-					<p class="mb-4">The information we collect may be used for various purposes, including processing
-						your bookings, communicating with you about your reservations, improving our website and
-						services, and sending you promotional materials or updates related to your stay. We will not
-						sell or rent your personal information to third parties without your explicit consent.</p>
+						<div class="privacy-section mb-5">
+							<h5 class="privacy-title mb-3" style="color: #8B4513; font-weight: 600;">2. Use of Your Information</h5>
+							<p class="mb-4">The information we collect may be used for various purposes...</p>
+						</div>
 
-					<h5 class="text-primary">3. Data Protection</h5>
-					<p class="mb-4">We take appropriate security measures to protect your personal information from
-						unauthorized access, alteration, disclosure, or destruction. Our website uses secure servers and
-						encryption technologies to ensure the safety of your data during transmission. However, please
-						be aware that no method of transmission over the internet or method of electronic storage is
-						100% secure.</p>
+						<!-- Continuar con el mismo patrón para las demás secciones -->
 
-					<h5 class="text-primary">4. Cookies and Tracking Technologies</h5>
-					<p class="mb-4">Our website uses cookies and similar tracking technologies to enhance user
-						experience and analyze website traffic. Cookies are small files stored on your device that help
-						us remember your preferences and improve our services. You can choose to accept or decline
-						cookies through your browser settings; however, this may affect your ability to use certain
-						features of our site.</p>
+						<style>
+							.privacy-section {
+								padding: 20px;
+								border-radius: 8px;
+								transition: all 0.3s ease;
+								background: rgba(255, 255, 255, 0.05);
+							}
 
-					<h5 class="text-primary">5. Third-Party Services</h5>
-					<p class="mb-4">We may use third-party services to facilitate our operations, such as payment
-						processors and marketing tools. These third parties may have access to your personal information
-						only to perform specific tasks on our behalf and are obligated not to disclose or use it for any
-						other purpose. We do not control the privacy practices of these third parties, and we encourage
-						you to review their policies.</p>
+							.privacy-section:hover {
+								background: rgba(255, 255, 255, 0.1);
+								transform: translateY(-2px);
+							}
 
-					<h5 class="text-primary">6. Your Rights</h5>
-					<p class="mb-4">You have the right to access, correct, or delete your personal information at any
-						time. If you wish to exercise these rights or have any questions about your data, please contact
-						us at the provided email address. We will respond to your request in a timely manner and in
-						accordance with applicable laws.</p>
+							.privacy-title {
+								position: relative;
+								padding-left: 15px;
+							}
 
-					<h5 class="text-primary">7. Changes to This Privacy Policy</h5>
-					<p class="mb-4">We reserve the right to modify this Privacy Policy at any time. Any changes will be
-						effective immediately upon posting on our website. We will notify you of significant changes via
-						email or through a notification on our site. Your continued use of our website and services
-						after such changes signifies your acceptance of the new Privacy Policy.</p>
+							.privacy-title::before {
+								content: '';
+								position: absolute;
+								left: 0;
+								top: 50%;
+								transform: translateY(-50%);
+								width: 4px;
+								height: 20px;
+								background-color: #8B4513;
+								border-radius: 2px;
+							}
 
-					<h5 class="text-primary">8. Contact Us</h5>
-					<p class="mb-4">If you have any questions or concerns about this Privacy Policy or our practices
-						regarding your personal information, please do not hesitate to contact us. We are here to help
-						you and ensure your experience with Cloud-House is a pleasant one.</p>
+							.privacy-container p {
+								line-height: 1.8;
+								color: #666;
+							}
 
-					<hr class="my-4 border-secondary">
+							.lead {
+								font-size: 1.2rem;
+								color: #555;
+							}
+
+							@media (max-width: 768px) {
+								.privacy-container {
+									padding: 15px !important;
+								}
+								
+								.privacy-section {
+									padding: 15px;
+								}
+
+								.lead {
+									font-size: 1.1rem;
+								}
+							}
+						</style>
+					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
@@ -304,7 +317,7 @@
 							<p class="mt-3">
 								Experience spacious comfort in a rustic yet modern setting, perfect for family
 								gatherings. Enjoy cozy evenings by the fireplace and entertain on the terrace surrounded
-								by nature’s beauty.
+								by nature's beauty.
 							</p>
 							<div class="room-icons mt-4 pt-4">
 								<a class="mt-1 btn btn-primary text-white border-md" href="cabaña.html">See More</a>
@@ -364,7 +377,7 @@
 				<div class="col-sm-6 col-lg-3 pt-4 pt-sm-0">
 					<a href="services.html">
 						<div class="img-wrap services-wrap">
-							<img src="imagenes/services/desk/Deck.jpg" style="max-height: 200px; object-fit: cover;" class="border-md"
+							<img src="imagenes/deck.JPEG" style="max-height: 200px; object-fit: cover;" class="border-md"
 								alt="" />
 							<div class="services-text-over border-md">El Deck</div>
 						</div>
@@ -375,7 +388,7 @@
 						<div class="img-wrap services-wrap">
 							<img src="imagenes/camino.jpg" style="max-height: 200px; object-fit: cover;"
 								class="border-md" alt="" />
-							<div class="services-text-over border-md">Trails</div>
+							<div class="services-text-over border-md">Outdoors</div>
 						</div>
 					</a>
 				</div>

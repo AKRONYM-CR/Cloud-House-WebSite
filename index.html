@@ -102,6 +102,34 @@
         opacity: 0;
       }
     }
+
+    .book-now-text {
+      font-size: 24px;
+    }
+    
+    @media (max-width: 1200px) {
+      .book-now-text {
+        font-size: 20px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .book-now-text {
+        font-size: 18px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .book-now-text {
+        font-size: 16px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .book-now-text {
+        font-size: 14px;
+      }
+    }
   </style>
 
 </head>
@@ -162,7 +190,7 @@
     <div class="menu">
       <a href="index.html">
         <div class="logo">
-          <img src="CloudHouseBlackLogo.png" style="filter: invert(); width: 60px" alt="" />
+          <img src="CloudHouseBlackLogo.png" style="filter: invert(); object-fit: contain; width: 120px;" alt="" />
         </div>
       </a>
       <ul>
@@ -171,7 +199,7 @@
         </li>
 
         <li>
-          <a href="about.html">about us</a>
+          <a href="about.html" class="text-nowrap">about us</a>
         </li>
         <li>
           <a href="#">Cottages</a>
@@ -194,10 +222,10 @@
           <a href="experiences.html">Experiences</a>
         </li>
         <li>
-          <a href="wildlife.html">Wildlife</a>
+          <a href="farmLife.html">farmLife</a>
         </li>
         <li>
-          <a href="reservation.html"><span class="font-weight-bold text-white border-md">Book Now</span></a>
+          <a href="reservation.html"><span class="font-weight-bold text-white border-md text-nowrap book-now-text font-size-24">Book Now</span></a>
         </li>
       </ul>
     </div>
@@ -218,6 +246,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 parallax-fade-top text-center">
+            <img src="CloudHouseBlackLogo.png" class="mb-4" style="filter: invert(); width: 260px;" alt="" />
             <h2 class="text-white font-weight-bold"> Welcome To Cloud House</h2>
             <a href="#first-section">
               <div class="scroll-down-animation">
@@ -237,7 +266,7 @@
     <div class="row">
       <div class="col-md-6 my-4 mt-md-0">
         <div class="img-wrap d-flex justify-content-center justify-content-md-start">
-          <img src="imagenes/home-section-1.jpg" alt="">
+          <img src="imagenes/about.JPEG" alt="">
         </div>
       </div>
       <div class="col-md-6 align-self-center">
@@ -248,12 +277,12 @@
             </div>
             <h2 class="text-center">Here is a tribute to good life!</h2>
             <p class="text-center mt-5">
-              Nestled in the heart of nature, this sanctuary invites you to escape the hustle and bustle of everyday
-              life. Immerse yourself in the tranquility of lush greenery and the soothing sounds of the forest, where
-              every breath rejuvenates your spirit. This is more than just a getaway; it’s a celebration of life,
+              Nested  in the heart of the woods, this sanctuary invites you to escape the hustle and rush of everyday
+              life. Immerse yourself in the lush greenery and the soothing sounds of the forest, where
+              every breath renovate your spirit. This is more than just a getaway; it's a celebration of life,
               offering a perfect retreat for those seeking peace, adventure, and connection with nature. Discover
               hidden trails, breathe in the fresh air, and let the beauty of the surroundings inspire you. Come,
-              unwind, and create lasting memories in this enchanting paradise.
+              unwind, and create lasting memories in this paradise.
             </p>
           </div>
         </div>
@@ -289,7 +318,7 @@
         </div>
         <div class="col-xl-6 px-0 order-first order-xl-last mt-5 mt-xl-0">
           <div class="img-wrap" id="rev-2" style="width:100%;">
-            <img src="imagenes/casita-horizontal.jpg" alt="" />
+            <img src="imagenes/casita.png" style="max-height: 60vh; object-fit: cover;" alt="" />
             <div class="text-element-over">"La Casita"</div>
           </div>
         </div>
@@ -300,7 +329,7 @@
       <div class="row mx-0 order-first order-xl-last mt-5 mt-xl-0">
         <div class="col-xl-6 px-0">
           <div class="img-wrap" id="rev-1">
-            <img src="imagenes/cabana.jpg" alt="" />
+            <img style="max-height: 60vh; object-fit: cover;" src="imagenes/cabaña.JPG" alt="" />
             <div class="text-element-over">"La Cabaña"</div>
           </div>
         </div>
@@ -310,7 +339,7 @@
               <h3 class="text-center">"La Cabaña"</h3>
               <p class="text-center mt-4">
                 Experience spacious comfort in a rustic yet modern setting, perfect for family gatherings. Enjoy cozy
-                evenings by the fireplace and entertain on the terrace surrounded by nature’s beauty.
+                evenings by the fireplace and entertain on the terrace surrounded by nature's beauty.
               </p>
               <a class="mt-5 btn btn-primary border-md" href="cabaña.html">See More</a>
             </div>
@@ -336,7 +365,7 @@
         </div>
         <div class="col-xl-6 px-0 order-first order-xl-last mt-5 mt-xl-0">
           <div class="img-wrap" id="rev-3">
-            <img src="imagenes/loft/loft-exterior.jpg" alt="" />
+            <img style="max-height: 60vh; object-fit: cover;" src="imagenes/loft-home.jpg" alt="" />
             <div class="text-element-over">"El Loft"</div>
           </div>
         </div>
@@ -370,7 +399,7 @@
           <p class="review-author">Emily Carter</p>
         </div>
         <div class="review-item">
-          <p class="review-text">I loved the cleanliness and attention to detail in the room. The location is perfect, close to everything yet quiet and serene. I’ll definitely book again when I’m in the area."</p>
+          <p class="review-text">I loved the cleanliness and attention to detail in the room. The location is perfect, close to everything yet quiet and serene. I'll definitely book again when I'm in the area."</p>
           <p class="review-author">David Thompson</p>
         </div>
         <div class="review-item">
@@ -410,22 +439,26 @@
 
       .review-item {
         position: absolute;
-        padding: 10px;
+        padding: 20px;
         top: 50%;
         left: 50%;
         width: 80%;
         box-sizing: border-box;
-        background-color: rgba(0, 0, 0, 0.3);
-        border-radius: 8px;
+        /* Efecto Glassmorphism */
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        border-radius: 16px;
         text-align: center;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
         transform: translate(-50%, -50%);
         color: white;
         font-weight: 400;
       }
-
 
       .review-item.active {
         opacity: 1;
@@ -435,11 +468,13 @@
       .review-text {
         font-size: 1.25rem;
         font-style: italic;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
 
       .review-author {
         font-size: 1rem;
         margin-top: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       }
 
       .review-carousel-control {
@@ -509,7 +544,7 @@
         <div class="col-sm-6 col-lg-3 pt-4 pt-sm-0">
           <a href="services.html">
             <div class="img-wrap services-wrap">
-              <img src="imagenes/services/desk/Deck.jpg" style="max-height: 200px; object-fit: cover;"
+              <img src="imagenes/deck.JPEG" style="max-height: 200px; object-fit: cover;"
                 class="border-md" alt="" />
               <div class="services-text-over border-md">El Deck</div>
             </div>
@@ -518,8 +553,8 @@
         <div class="col-sm-6 col-lg-3 pt-4 pt-lg-0">
           <a href="services.html">
             <div class="img-wrap services-wrap">
-              <img src="imagenes/1080.jpg" style="max-height: 200px; object-fit: cover;" class="border-md" alt="" />
-              <div class="services-text-over border-md">Trails</div>
+              <img src="imagenes/outdoors.png" style="max-height: 200px; object-fit: cover;" class="border-md" alt="" />
+              <div class="services-text-over border-md">Outdoors</div>
             </div>
           </a>
         </div>
