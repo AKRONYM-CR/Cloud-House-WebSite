@@ -162,7 +162,7 @@
       </div>
     </div>
     <div class="menu">
-      <a href="index.html">
+      <a href="index.html" style= z-index:5>
         <div class="logo">
           <img src="CloudHouseBlackLogo.png" style="filter: invert(); object-fit: contain; width: 120px;" alt="" />
         </div>
@@ -223,138 +223,65 @@
 
   <div class="section padding-top z-bigger">
     <div class="container">
-      <div class="row justify-content-center padding-bottom-smaller">
-        <div class="col-md-8">
-          <div class="subtitle with-line text-center mb-4 text-xl font-bold">Cloud House</div>
-          <h3 class="text-center pb-4 text-2xl">Drop Us a Line</h3>
-        </div>
-        <div class="container mt-5">
-          <div class="card p-4 shadow">
-            <form>
-              <div class="row g-3 align-items-center">
-                <!-- DÓNDE -->
-                <div class="col-md-3">
-                  <label for="ubicacion" class="form-label">Type</label>
-                  <button id="dropdownButton" class="form-control d-flex justify-content-between align-items-center text-start" type="button" data-toggle="dropdown" aria-expanded="false">
-                    <span>Cottages</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M3 10 L12 3 L21 10"></path>
-                      <rect x="6" y="10" width="12" height="10"></rect>
-                      <line x1="9" y1="20" x2="9" y2="14"></line>
-                      <line x1="15" y1="20" x2="15" y2="14"></line>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 1)">La Cabaña</button>
-                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 2)">Deck</button>
-                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 3)">La Casita</button>
-                    <button class="dropdown-item" type="button" onclick="updateDropdown(this, 4)">Loft</button>
-                  </div>
-                </div>
-                <!-- LLEGADA -->
-                <div class="col-md-3">
-                  <label for="fecha-llegada" class="form-label">Check in</label>
-                  <input type="text" id="fecha-llegada" class="form-control" value="mm/dd/yyyy" disabled>
-                </div>
-                <!-- SALIDA -->
-                <div class="col-md-3">
-                  <label for="fecha-salida" class="form-label">Check out</label>
-                  <input type="text" id="fecha-salida" class="form-control" value="mm/dd/yyyy" disabled>
-                </div>
-                <!-- QUIÉN -->
-                <div class="col-md-3">
-                  <label class="form-label">Who</label>
-                  <button id="dropdownMenuButton" class="form-control d-flex justify-content-between align-items-center text-start" type="button" data-toggle="dropdown" aria-expanded="false">
-                    <span>Guests</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                  </button>
-                  <ul class="dropdown-menu p-3" id="dropdown-menu" style="width: 250px;" data-bs-auto-close="outside">
-                    <li class="d-flex justify-content-between align-items-center">
-                      <span>Adults</span>
-                      <div class="d-flex align-items-center" id="dropdownAdults">
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle rounded-circle" type="button" onclick="cambiarValor('adultos', -1)">-</button>
-                        <span id="adultos" class="mx-2">1</span>
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle rounded-circle" type="button" onclick="cambiarValor('adultos', 1)">+</button>
-                      </div>
-                      <div class="justify-content-end d-none" id="inputAdults">
-                        <input type="text" class="form-control w-50 border-danger" id="adultosInput" onblur="test(value)" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;">
-                      </div>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center mt-2">
-                      <span>Children</span>
-                      <div class="d-flex align-items-center">
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('ninos', -1)">-</button>
-                        <span id="ninos" class="mx-2">0</span>
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('ninos', 1)">+</button>
-                      </div>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center mt-2">
-                      <span>Infants</span>
-                      <div class="d-flex align-items-center">
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('bebes', -1)">-</button>
-                        <span id="bebes" class="mx-2">0</span>
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('bebes', 1)">+</button>
-                      </div>
-                    </li>
-                    <li class="d-flex justify-content-between align-items-center mt-2">
-                      <span>Pets</span>
-                      <div class="d-flex align-items-center">
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('mascotas', -1)">-</button>
-                        <span id="mascotas" class="mx-2">0</span>
-                        <button class="btn btn-sm btn-outline-secondary rounded-circle" type="button" onclick="cambiarValor('mascotas', 1)">+</button>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </form>
-            <div class="row mt-4 d-none" id="reservationForm">
-              <div class="col-md-4">
-                <label for="fullname" class="form-label">Fullname</label>
-                <input type="text" class="form-control" id="fullname">
-              </div>
-              <div class="col-md-4">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="example@example.com">
-              </div>
-              <div class="col-md-4">
-                <label for="phoneNumber" class="form-label">Phone number</label>
-                <input type="number" class="form-control" id="phoneNumber" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" placeholder="87654321">
-              </div>
-              <div class="mt-4 col-md-12 d-flex justify-content-center">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="termsCheck">
-                  <label class="form-check-label" for="termsCheck">
-                    I accept the <a href="#">terms and conditions</a>
-                  </label>
-                </div>
-              </div>
+        <div id="notification-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+        
+        <div class="row justify-content-center padding-bottom-smaller">
+            <div class="col-md-8">
+                <div class="subtitle with-line text-center mb-4" style="color: #8B4513;">Cloud House</div>
+                <h3 class="text-center pb-4">Contact Us</h3>
             </div>
-          </div>
+            <div class="container mt-5">
+                <div class="contact-form p-4" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 16px; box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.1); border: 1px solid rgba(139, 69, 19, 0.2);">
+                    <form id="contactForm">
+                        <div class="row flex justify-content-center align-items-center flex-wrap" style="gap: 10px;">
+                            <!-- Tipo de Alojamiento -->
+                            <div class="col-md-5">
+                                <label for="accommodation" class="form-label mb-2">Choose Your Paradise</label>
+                                <div class="custom-select-wrapper">
+                                    <select class="form-select custom-select w-100" id="accommodation" name="accommodation" required>
+                                        <option value="" selected disabled>Choose your accommodation</option>
+                                        <option value="cabana">LA CABAÑA</option>
+                                        <option value="deck">THE DECK</option>
+                                        <option value="casita">LA CASITA</option>
+                                        <option value="loft">THE LOFT</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Cantidad de Personas -->
+                            <div class="col-md-5">
+                                <label for="guests" class="form-label">Number of Guests</label>
+                                <input type="number" class="form-control" id="guests" min="1" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-5">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="col-md-5">
+                                <label for="whatsapp" class="form-label">WhatsApp Number</label>
+                                <input type="tel" class="form-control" id="whatsapp" required>
+                            </div>
+
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn px-5 py-2" 
+                                    style="background-color: #8B4513; color: white; transition: all 0.3s ease;"
+                                    onmouseover="this.style.backgroundColor='#6B4423'"
+                                    onmouseout="this.style.backgroundColor='#8B4513'">
+                                    Send Inquiry
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-md-8 mt-3 ajax-form text-center">
-          <button
-            class="send_message bg-indigo-600 text-white p-3 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" 
-            onclick="reservation(event)" id="submitButton"
-            disabled
-          >
-            <span>Submit</span>
-          </button>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="subscribe-home">
-            <input type="text" placeholder="your email here" />
-            <button data-lang="en">subscribe</button>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
+
   <div class="section padding-top-bottom-small background-black over-hide footer">
     <div class="container">
       <div class="row justify-content-center">
@@ -416,284 +343,178 @@
 ================================================== -->
 
 <script>
-  let placeType = 0;
-  let finalStartDate = "";
-  let finalEndDate = "";
+function createNotification(message, type) {
+    // Crear el elemento de notificación
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const formatDate = (daysToAdd = 0) => {
-      let date = new Date();
-      date.setDate(date.getDate() + daysToAdd);
-      return date.toISOString().split("T")[0];
-    };
-
-    document.getElementById("fecha-llegada").min = formatDate();
-    document.getElementById("fecha-salida").min = formatDate(1);
-
-    document.querySelectorAll("#dropdown-menu").forEach(button => {
-      button.addEventListener("click", function (event) {
-        event.stopPropagation(); // Evita que el dropdown se cierre
-      });
-    });
-  });
-
-  function test(value){
-    if (value !== '') {
-      document.getElementById("adultosInput").classList.remove('border-danger');
-      document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'false');
-      document.getElementById("dropdown-menu").classList.remove("show");
-    } else {
-      document.getElementById("adultosInput").classList.add('border-danger');  // Añade el borde rojo si está vacío
-      document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'true');
-      document.getElementById("dropdown-menu").classList.add("show");
-    }
-  }
-
-  function updateDropdown(element, id) {
-    document.getElementById("dropdownButton").innerText = element.innerText;
-    document.getElementById("dropdownAdults").classList.add("d-flex");
-    document.getElementById("dropdownAdults").classList.remove("d-none");
-    document.getElementById("inputAdults").classList.remove("d-flex");
-    document.getElementById("inputAdults").classList.add("d-none");
-
-    document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'false');
-    document.getElementById("dropdown-menu").classList.remove("show");
-    if(id == 2){
-      console.log(id)
-      document.getElementById("dropdownAdults").classList.remove("d-flex");
-      document.getElementById("dropdownAdults").classList.add("d-none");
-      document.getElementById("inputAdults").classList.add("d-flex");
-      document.getElementById("inputAdults").classList.remove("d-none");
-
-      document.getElementById("dropdownMenuButton").setAttribute('aria-expanded', 'true');
-      document.getElementById("dropdown-menu").classList.add("show");
-    }
+    // Obtener el contenedor
+    const container = document.getElementById('notification-container');
     
-    searchAvailability(id);
-  }
+    // Agregar la notificación al contenedor
+    container.appendChild(notification);
 
-  function searchAvailability(id) {
-    placeType = id;
-    fetch("https://hook.us2.make.com/z88bjr9rw4o2aupfsnx9t4q1nswrwar5", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tipo_estadia: id })
-    })
-    .then(response => response.json()) // Convertir la respuesta a JSON
-    .then(data => {
-      let fechaStart = document.getElementById("fecha-llegada");
-      let fechaEnd = document.getElementById("fecha-salida");
-      
-      fechaStart.value="mm/dd/yyyy";
-      fechaEnd.value="mm/dd/yyyy";
+    // Eliminar la notificación después de 3 segundos
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.5s forwards';
+        setTimeout(() => {
+            container.removeChild(notification);
+        }, 500);
+    }, 3000);
+}
 
-      fechaStart.disabled = false;
-      fechaEnd.disabled = false;
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    try {
+        const response = await fetch('TU_URL_DE_MAKE_API', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                accommodation: document.getElementById('accommodation').value,
+                guests: document.getElementById('guests').value,
+                email: document.getElementById('email').value,
+                whatsapp: document.getElementById('whatsapp').value
+            })
+        });
 
-      let fechasOcupadas = [];
-
-      data.forEach(element => {
-        let startDate = new Date(element.start); // Fecha de llegada
-        let endDate = new Date(element.end); // Fecha de salida
-
-        while (startDate < endDate) {
-          fechasOcupadas.push(startDate.toISOString().split('T')[0]);
-          startDate.setDate(startDate.getDate() + 1);
+        if (response.ok) {
+            // Mostrar notificación de éxito
+            createNotification('¡Message sent successfully!', 'success');
+            // Limpiar el formulario
+            this.reset();
+        } else {
+            // Mostrar notificación de error
+            createNotification('Error sending the message. Please try again.', 'error');
         }
-      });
 
-      flatpickr("#fecha-llegada", {
-        disable: fechasOcupadas,
-        dateFormat: "Y-m-d",
-        minDate: "today",
-        maxDate: new Date().fp_incr(90),
-        onChange: function (selectedDates, dateStr, instance) {
-          finalStartDate = dateStr;
-          startDateSelect(dateStr); // Llama a tu función personalizada
+    } catch (error) {
+        // Determinar el tipo de error y mostrar el mensaje apropiado
+        let errorMessage;
+        
+        if (error.message.includes('405')) {
+            errorMessage = 'Server error: Method not allowed. Please try again later.';
+        } else if (error.name === 'TypeError') {
+            errorMessage = 'Connection error: Unable to reach the server.';
+        } else {
+            errorMessage = 'An error occurred while sending your message. Please try again.';
         }
-      });
-
-      flatpickr("#fecha-salida", {
-        disable: fechasOcupadas,
-        dateFormat: "Y-m-d",
-        minDate: new Date().fp_incr(1),
-        maxDate: new Date().fp_incr(91)
-      });
-    })
-    .catch(error => console.error("Error:", error)); // Manejar errores
-  }
-
-  function startDateSelect(startDate){
-    let picker = document.querySelector("#fecha-salida")._flatpickr;
-    if (picker) picker.destroy();
-    let fechaLlegada = new Date(startDate);
-
-    flatpickr("#fecha-salida", {
-      disable: [startDate], // Opcional: deshabilita la fecha de llegada
-      dateFormat: "Y-m-d",
-      minDate: fechaLlegada.fp_incr(1), // Establece el día siguiente como mínimo
-      maxDate: new Date().fp_incr(91), // Máximo 91 días desde hoy
-      onChange: function (selectedDates, dateStr, instance) {
-        finalEndDate = dateStr;
-        endDateSelect(); // Llama a tu función personalizada
-      }
-    });
-  }
-
-  function endDateSelect(){
-    document.getElementById("reservationForm").classList.remove('d-none');
-    document.getElementById("submitButton").disabled = false;
-  }
-
-  function reservation(e){
-    let adultos = document.getElementById("dropdownAdults").classList.contains('d-none') ? parseInt(document.getElementById("adultosInput").value) : parseInt(document.getElementById("adultos").textContent);
-    let ninos = parseInt(document.getElementById("ninos").textContent);
-    let bebes = parseInt(document.getElementById("bebes").textContent);
-    let mascotas = parseInt(document.getElementById("mascotas").textContent);
-
-    let data = `Adults: ${adultos}, Children: ${ninos}, Infants: ${bebes}, Pets: ${mascotas}`;
-
-    let inputs = [
-      document.getElementById("fullname"),
-      document.getElementById("email"),
-      document.getElementById("phoneNumber")
-    ];
-
-    let isValid = true;
-
-    inputs.forEach(input => {
-      if (input.value.trim() === "") {
-        input.classList.add("is-invalid"); // Agrega el borde rojo de Bootstrap
-        isValid = false;
-      } else {
-        input.classList.remove("is-invalid"); // Elimina el borde rojo si se corrige
-      }
-    });
-
-    let termsCheck = document.getElementById("termsCheck");
-    if (!termsCheck.checked) {
-      termsCheck.classList.add("is-invalid");
-      isValid = false;
-    } else {
-      termsCheck.classList.remove("is-invalid");
+        
+        // Mostrar la notificación de error
+        createNotification(errorMessage, 'error');
     }
-
-    if (!isValid) {
-      return e.preventDefault(); // Evita el envío si hay campos vacíos
-    }
-
-    Swal.fire({
-      title: "<strong>You will make the reservation.</strong>",
-      icon: "info",
-      html: `
-        <strong>Your information:</strong><br>
-        Fullname: ${document.getElementById("fullname").value},<br>
-        Email: ${document.getElementById("email").value},<br>
-        Phone number: ${document.getElementById("phoneNumber").value},<br>
-        For: ${data},<br>
-        At: ${(placeType == 1 ? "La Cabaña" : placeType == 2 ? "Deck" : placeType == 3 ? "La casita" : "Loft")}
-      `,
-      showCancelButton: true,
-      confirmButtonColor: "btn btn-success",
-      cancelButtonColor: "btn btn-danger",
-      confirmButtonText: "Yes!",
-      reverseButtons: true
-    })
-    .then((result) => {
-      if (result.isConfirmed) {
-        document.getElementById("submitButton").disabled = true;
-
-        fetch("https://hook.us2.make.com/tcplmfpjo95j44b4ianlpt8wx413016b", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          tipo_estadia: placeType, 
-          type: (placeType == 1 ? "La Cabaña" : placeType == 2 ? "Deck" : placeType == 3 ? "La casita" : "Loft"),
-          startDate: finalStartDate, 
-          endDate: finalEndDate,
-          who: data,
-          fullname: document.getElementById("fullname").value,
-          email: document.getElementById("email").value,
-          phoneNumber: document.getElementById("phoneNumber").value
-        })
-      })
-      .then(response => response.json()) // Convertir la respuesta a JSON
-      .then(data => {
-        Swal.fire({
-          title: data.message,
-          icon: data.type
-        }, 
-          timerInterval = setInterval(() => {
-            window.location.reload();
-          }, 300)
-        );
-      })
-      .catch(error => console.error("Error:", error)); // Manejar errores
-      }
-    });
-  }
-
-  function cambiarValor(tipo, cambio) {
-    let elemento = document.getElementById(tipo);
-    let valor = parseInt(elemento.textContent) + cambio;
-    if (valor < 0) return;
-    elemento.textContent = valor;
-    actualizarResumen();
-  }
-  
-  function actualizarResumen() {
-    let adultos = parseInt(document.getElementById("adultos").textContent);
-    let ninos = parseInt(document.getElementById("ninos").textContent);
-    let bebes = parseInt(document.getElementById("bebes").textContent);
-    let mascotas = parseInt(document.getElementById("mascotas").textContent);
-    
-    let texto = `${adultos} adulto${adultos > 1 ? "s" : ""}`;
-    if (ninos > 0) texto += `, ${ninos} niño${ninos > 1 ? "s" : ""}`;
-    if (bebes > 0) texto += `, ${bebes} bebé${bebes > 1 ? "s" : ""}`;
-    if (mascotas > 0) texto += `, ${mascotas} mascota${mascotas > 1 ? "s" : ""}`;
-    
-  }
+});
 </script>
 
 <style>
-  /* Estilo para hacer que el input de flatpickr se vea como un input date nativo */
-  #fecha-llegada, #fecha-salida {
-    font-family: inherit;
-    font-size: inherit;
-    padding: 8px;
-    width: 100%;
-    background-color: #fff;
-    appearance: none; /* Eliminar estilos específicos de los navegadores */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
+.form-control:focus, .form-select:focus {
+    border-color: #8B4513;
+    box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+}
 
-  /* Estilos adicionales para que el calendario de flatpickr se vea consistente */
-  .flatpickr-input {
-    font-family: inherit;
-    font-size: inherit;
-    padding: 8px;
-    width: 100%;
-    background-color: #fff;
+.form-label {
+    color: #666;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px !important;
+    }
+}
+
+.custom-select-wrapper {
+    position: relative;
+}
+
+.custom-select {
     appearance: none;
     -webkit-appearance: none;
-    -moz-appearance: none;
-  }
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    border-radius: 8px;
+    background-color: white;
+    color: #8B4513;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-  /* Para desactivar el botón de calendario de flatpickr */
-  .flatpickr-clear {
-    display: none;
-  }
+.custom-select option {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 15px;
+}
 
-  .flatpickr-calendar {
-    font-family: inherit;
-    font-size: inherit;
-  }
+.custom-select:focus {
+    outline: none;
+    border-color: #8B4513;
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+}
 
-  /* Opcional: Si quieres eliminar los bordes en el calendario */
-  .flatpickr-calendar .flatpickr-day:hover {
-    background-color: #e0e0e0;
-  }
+.custom-select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #8B4513;
+    border-bottom: 2px solid #8B4513;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.custom-select:focus + .custom-select-wrapper::after {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.notification {
+    padding: 15px 25px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    min-width: 300px;
+    animation: slideIn 0.5s forwards;
+    backdrop-filter: blur(10px);
+}
+
+.notification-success {
+    background-color: rgba(47, 158, 68, 0.95);
+    box-shadow: 0 4px 12px rgba(47, 158, 68, 0.2);
+}
+
+.notification-error {
+    background-color: rgba(220, 53, 69, 0.95);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
 </style>
 </body>
 

@@ -679,17 +679,28 @@ span.call-top:hover{
 }
 .menu  {
 	position:relative;
-	width:calc(100% - 60px);
-	margin:0 auto;
-	max-width:1410px;
+	width:100%;
 	z-index:3;
 	display: flex;
 	justify-content: center;
+	flex-wrap: nowrap;
 	align-items: center;
+	padding: 0 30px;
+	background: #111;
 }
 @media (max-width: 1170px) {
 	.menu {
 		justify-content: space-between;
+	}
+	.menu > ul {
+		top: 120px!important;
+		position: absolute;
+		background: #111;
+		width: 100%;
+		left: 0;
+	}
+	.logo{
+		margin-right: 10px;
 	}
 }
 .menu > ul {
@@ -702,11 +713,9 @@ span.call-top:hover{
     box-sizing: border-box;
 	display: flex;
 	justify-content: center;
-	align-items: center;	
-    position: absolute;
-	background: #111;
+	align-items: center;
 	padding: 20px;
-	top: 115px;
+	top:0;
 
 }
 .menu > ul:before,
